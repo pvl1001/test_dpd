@@ -1,0 +1,17 @@
+._ {
+   height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   gap: 10px;
+
+   h1 {
+      font-size: 150px;
+   }
+
+   a {
+      color: blue;
+      text-decoration: underline;
+   }
+}

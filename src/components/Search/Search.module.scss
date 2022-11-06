@@ -1,0 +1,24 @@
+._ {
+   height: 40px;
+   padding: 10px 0;
+   box-sizing: content-box;
+   display: flex;
+   gap: 8px;
+
+   input {
+      height: inherit;
+      width: 400px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      padding: 0 10px;
+      justify-self: left;
+   }
+
+   button {
+      height: inherit;
+      padding: 0 15px;
+      background-color: #ccc;
+      border-radius: 5px;
+   }
+
+}

@@ -4,6 +4,9 @@
 /node_modules
 /.pnp
 .pnp.js
+package-lock.json
+server/node_modules
+server/package-lock.json
 
 # testing
 /coverage
@@ -12,6 +15,7 @@
 /build
 
 # misc
+.idea
 .DS_Store
 .env.local
 .env.development.local
