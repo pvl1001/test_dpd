@@ -2,7 +2,7 @@
 
 ### Запуск проекта:
 1. Установить зависимости из папки "server" - npm install
-2. Запустить локальный сервер localhost:4000 из папки "server" - npm run start
+2. Запустить локальный сервер localhost:4000 из папки "server" - npm run server
 3. Установить зависимости из корневой папки - npm install
 4. Запустить проект на localhost:3000 из корневой папки - npm run start
 
