@@ -1,7 +1,11 @@
 import s from './Search.module.scss'
+import { useContext } from "react";
+import { TableContext } from "../../context";
 
 
-function Search( { searchValue, setSearchValue, searchSubmit } ) {
+function Search() {
+   const { searchSubmit, searchValue, setSearchValue } = useContext( TableContext )
+
    return (
       <form className={ s._ } onSubmit={ searchSubmit }>
          <input

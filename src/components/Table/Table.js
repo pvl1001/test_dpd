@@ -1,8 +1,10 @@
 import s from './Table.module.scss'
+import { useContext } from "react";
+import { TableContext } from "../../context";
 
 
-function Table( { data } ) {
-   if ( data === null ) return null
+function Table() {
+   const { tableData } = useContext( TableContext )
 
    const tableHead = [
       "Аватар",
@@ -26,7 +28,7 @@ function Table( { data } ) {
          </thead>
 
          <tbody>
-         { data.map( ( el, i ) =>
+         { tableData.map( ( el, i ) =>
             <tr key={ el.id.name + i }>
                <td><img src={ el.picture.medium } alt="аватар"/></td>
                <td>{ el.name.title } { el.name.first } { el.name.last }</td>

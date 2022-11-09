@@ -1,11 +1,14 @@
 import s from './Pagination.module.scss'
 import { useSearchParams } from "react-router-dom"
+import { useContext } from "react";
+import { TableContext } from "../../context";
 
 
-function Pagination( { data, activeSliceCount, setActiveSliceCount, queryParams } ) {
+function Pagination() {
+   const { paginationData, activeSliceCount, setActiveSliceCount, queryParams } = useContext( TableContext )
    const [ , setSearchParams ] = useSearchParams()
    const count = 20
-   const arrCountPagination = Math.ceil( data.length / count )
+   const arrCountPagination = Math.ceil( paginationData.length / count )
    const arr = []
 
 

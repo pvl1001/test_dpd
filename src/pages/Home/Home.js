@@ -6,6 +6,7 @@ import Pagination from "../../components/Pagination/Pagination";
 import Search from "../../components/Search/Search";
 import Loader from "../../components/Loader/Loader";
 import { useSearchParams } from "react-router-dom";
+import { TableContext } from "../../context";
 
 
 function Home() {
@@ -105,30 +106,33 @@ function Home() {
 
 
    return (
-      <div className={ s._ }>
+      <TableContext.Provider value={ {
+         searchSubmit,
+         searchValue,
+         setSearchValue,
+         tableData: sliceData[activeSliceCount],
+         paginationData: getFilterData( initialData ),
+         activeSliceCount,
+         setActiveSliceCount,
+         queryParams
+      } }>
 
-         <Search
-            searchSubmit={ searchSubmit }
-            searchValue={ searchValue }
-            setSearchValue={ setSearchValue }
-         />
+         <div className={ s._ }>
 
-         { isLoading ?
-            <Loader/>
-            : sliceData.length
-               ? <>
-                  <Table data={ sliceData[activeSliceCount] }/>
-                  <Pagination
-                     data={ getFilterData( initialData ) }
-                     activeSliceCount={ activeSliceCount }
-                     setActiveSliceCount={ setActiveSliceCount }
-                     queryParams={ queryParams }
-                  />
-               </>
-               : <p>Ничего не найдено</p>
-         }
+            <Search/>
 
-      </div>
+            { isLoading ?
+               <Loader/>
+               : sliceData.length
+                  ? <>
+                     <Table/>
+                     <Pagination/>
+                  </>
+                  : <p>Ничего не найдено</p>
+            }
+
+         </div>
+      </TableContext.Provider>
    )
 }
 
